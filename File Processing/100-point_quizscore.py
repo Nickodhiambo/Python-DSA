@@ -8,6 +8,4 @@ def main():
         if int(score) >= score_ranges[i]:
             print(f'Your grade is {grades[i]}')
             break
-
-2
 main()
