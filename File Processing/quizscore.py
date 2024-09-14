@@ -3,7 +3,7 @@
 # output the grade
 
 def main():
-    score = input("Enter your score: ")
+    score = input("Enter a score between 0 and 5: ")
 
     grades = ['A', 'B', 'C', 'D', 'E', 'F']
 
