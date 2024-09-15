@@ -14,7 +14,7 @@ def main():
     for substring in substrings:
         first_letter = substring[0]
         acroynm_string += first_letter
-    print(f'The acronym is {acroynm_string.upper()}')
+    print(f'The acronym for "{phrase}" is {acroynm_string.upper()}')
 
 main()
 
