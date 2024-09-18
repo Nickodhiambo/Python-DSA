@@ -1,29 +1,22 @@
 # Accept a filename as input from user
 # Open the file
-# Parse the file content, dumping the contexts into a variable
-# Count the number of sentences
-# Count the number of words
-# Count the number of chars
-
+# Parse the file contentrfrom tkinter.filedialog import askopenfilename
 from tkinter.filedialog import askopenfilename
+
+def count_file_stats(filename):
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+        words = [word for line in lines for word in line.split()]
+        total_chars = sum(len(word) for word in words)
+
+    return len(lines), len(words), total_chars
 
 def main():
     filename = askopenfilename()
-    f = open (filename, 'r')
-    number_of_lines = len(f.readlines())
-    f_text = f.read()
-    words = (f_text.split(' '))
-    number_of_words = len(words)
+    num_lines, num_words, total_chars = count_file_stats(filename)
 
-    total_chars = 0
-    for word in words:
-        word_length = len(word)
-        total_chars += word_length
+    print(f"Total number of lines: {num_lines}")
+    print(f"Total number of words: {num_words}")
+    print(f"Total number of characters: {total_chars}")
 
-    print(f'The total number of lines is {number_of_lines}')
-    print(f'The total number of words is {number_of_words}')
-    print(f'The total number of chars is {total_chars}')
-          
-    f.close()
-    
 main()
