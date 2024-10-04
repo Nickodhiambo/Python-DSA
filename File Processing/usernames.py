@@ -1,7 +1,9 @@
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 def main():
+    print("Enter the file to process: ")
     infileName = askopenfilename()
+    print("Enter output file: ")
     outfileName = asksaveasfilename()
 
     infile = open(infileName, 'r')
